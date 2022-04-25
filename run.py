@@ -64,10 +64,19 @@ def find_account(account):
     method to search for an account
     '''
     return Credentials.find_account(account)
-    
+
 ##delete the account credentials
 def delete_credentials(account):
     '''
     method to delete account
     '''
     account.delete_credentials()
+
+def main():
+    print("Welcome to Password Locker! Please enter your name to begin:  ")
+    name = input ()
+    print(f"{name}, Sign up to start")
+    print('\n')
+    print("*" * 80)
+    print("Reply with  : cc - Sign Up,  ex -exit ")
+    print("*" * 80)
