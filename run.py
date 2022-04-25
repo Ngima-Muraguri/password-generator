@@ -73,10 +73,32 @@ def delete_credentials(account):
     account.delete_credentials()
 
 def main():
-    print("Welcome to Password Locker! Please enter your name to begin:  ")
+    print("Welcome to Password Generator! Please enter your name to begin:  ")
     name = input ()
     print(f"{name}, Sign up to start")
     print('\n')
     print("*" * 80)
     print("Reply with  : cc - Sign Up,  ex -exit ")
     print("*" * 80)
+
+    while True:
+        short_code = input().lower()
+        if short_code == 'cc':
+            print("Account creating process begins...")
+            print("Please enter the following information:")
+            print("Username: ")
+            username = input()
+
+            print("Password: ")
+            password = input()
+
+            save_user(create_useraccount(username, password))
+            print('\n')
+            print(f"{name}'s Account information: ")
+            print(f"Username: {username} , Password:{password}")
+            print('\n')
+            print(f"Logged in. Welcome {username}!")
+            print("*" * 80)
+         ##### utilize the credentials
+            print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account , ex -exit the contact list ")
+            print("*" * 80)
