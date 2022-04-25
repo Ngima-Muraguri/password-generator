@@ -152,3 +152,23 @@ def main():
             else:
                     print("*" * 30)
                     print("If empty, you do not have any accounts saved")
+
+                    ##find account
+        elif short_code == "fa":
+            print("Key in  the account you are searching for (ie.'instagram'): " )
+            search_credentials= input()
+            if find_account(search_credentials):
+                search_acc = find_account(search_credentials)
+                print(f"{search_acc.account} {search_acc.email} { search_acc.password}")
+            else: print("This account does not exist")
+        elif short_code == 'ex':
+            print("*"*30)
+            print("logging out...")
+            print('\n')
+            print('\n')
+            print("Byeee welcome back")
+            print("*"*30)
+            break    
+       
+if __name__=='__main__':
+    main()
