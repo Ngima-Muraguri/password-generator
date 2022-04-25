@@ -18,3 +18,6 @@ class user:
         self.second_name = second_name
         self.email = email
         self.password = password
+
+    def save_account(self):
+        user.new_account.append(self)
