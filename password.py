@@ -59,7 +59,7 @@ class user:
         return
 
         # initialize password
-        password = []
+        password = ""
 
         #pick random letters
         for i in range(letters_count):
@@ -78,13 +78,34 @@ class user:
              random.shuffle(characters)
         for i in range(password_len - characters_count):
             password.append(random.choice(characters))
+            password = letters + digits + special_characters
 
         
         #shuffle end result
         random.shuffle(password)
 
+
         #print list in string
         print(password)
+
+    @classmethod 
+    def account_exists(cls,email,password):
+
+        for account in cls.new_account:
+            if account.email == email and account.password == password:
+                return True
+
+        return False
+
+class credentials:
+    user_credentials = []
+
+    def _init_(self,account_name,email,password):
+        self.account_name = account_name
+        self.email = email
+        self.password = password
+
+    
 
 
 
