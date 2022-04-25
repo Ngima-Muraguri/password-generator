@@ -102,3 +102,25 @@ def main():
          ##### utilize the credentials
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account , ex -exit the contact list ")
             print("*" * 80)
+
+            elif short_code == "ca":
+                print("Enter account details: ")
+                print("Account Name(e.g:linkedin): ")
+                account = input()
+                print("Email: ")
+                email = input()
+                print("Would you like a generated password?")
+            if input()=="yes":
+                characters= "mcnzbxvlkjhgfdsaqwertyuiop@#&$!()1234567890MCNZBXVLKJHGFDSAQWERTYUIOP"
+                how_many = len(characters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of password is {how_many}")
+                lent = int(input())
+                password = "".join(random.sample(characters, lent))
+                print(f"Your password has {lent} characters ")
+                print(password)
+                save_credentials(create_credentials(account, email, password))
+                print("saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, ex -exit the contact list ")
+                print("*" * 80)
