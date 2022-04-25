@@ -30,7 +30,7 @@ class Credentials:
         return new_credentials
 
 @classmethod
-    def find_account(cls, account):
+def find_account(cls, account):
         '''
         search for accounts
         '''
@@ -38,8 +38,8 @@ class Credentials:
             if credentials.account == account:
                 return credentials  
 
-    @classmethod
-    def credentials_exists(cls, account):
+@classmethod
+def credentials_exists(cls, account):
         '''
         confirm a class actually exists
         '''
@@ -48,10 +48,10 @@ class Credentials:
                 return True
         return False  
 
-        
+
         #Display credentials
-    @classmethod
-    def display_credentials(cls):
+@classmethod
+def display_credentials(cls):
         '''
         method that returns all credentials
         '''
