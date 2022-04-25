@@ -1,5 +1,5 @@
 import random 
-import pyperclip
+# import pyperclip
 
 class user:
 
@@ -48,43 +48,43 @@ class user:
 
         #number of characters
         letters_count = int(input("How many letters do you want in the password: "))
-	    digits_count = int(input("How many digits do you want in the password: "))
-	    special_characters_count = int(input("How many special characters do you want in the password: "))
+        digits_count = int(input("How many digits do you want in the password: "))
+        special_characters_count = int(input("How many special characters do you want in the password: "))
 
         characters_count = letters_count + digits_count + special_characters_count
 
         #checking password length vs password count
         if characters_count > password_len:
-		print("Characters total count is greater than the password length")
-		return
+             print("Characters total count is greater than the password length")
+        return
 
         # initialize password
         password = []
 
         #pick random letters
         for i in range(letters_count):
-		    password.append(random.choice(letters))
+            password.append(random.choice(letters))
 
         #pick random digits
         for i in range(digits_count):
-		     password.append(random.choice(digits))
+             password.append(random.choice(digits))
 
         #pick random special characters
         for i in range(special_characters_count):
-		     password.append(random.choice(special_characters))
+             password.append(random.choice(special_characters))
 
         #checking for short password
         if characters_count < password_len:
-		     random.shuffle(characters)
-		for i in range(password_len - characters_count):
-			password.append(random.choice(characters))
+             random.shuffle(characters)
+        for i in range(password_len - characters_count):
+            password.append(random.choice(characters))
 
         
         #shuffle end result
         random.shuffle(password)
 
         #print list in string
-        print("".join(password))
+        print(password)
 
 
 
