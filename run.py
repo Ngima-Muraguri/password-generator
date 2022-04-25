@@ -103,14 +103,14 @@ def main():
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account , ex -exit the contact list ")
             print("*" * 80)
 
-            elif short_code == "ca":
+        elif short_code == "ca":
                 print("Enter account details: ")
                 print("Account Name(e.g:linkedin): ")
                 account = input()
                 print("Email: ")
                 email = input()
                 print("Would you like a generated password?")
-            if input()=="yes":
+        if input()=="yes":
                 characters= "mcnzbxvlkjhgfdsaqwertyuiop@#&$!()1234567890MCNZBXVLKJHGFDSAQWERTYUIOP"
                 how_many = len(characters)
                 print("How long would you like your password to be? ")
@@ -125,7 +125,7 @@ def main():
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, ex -exit the contact list ")
                 print("*" * 80)
 
-                elif input() == "no":
+        elif input() == "no":
                 print("Password: ")
                 password=input()
                 save_credentials(create_credentials(account, email, password))
