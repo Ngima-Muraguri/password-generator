@@ -124,3 +124,31 @@ def main():
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, ex -exit the contact list ")
                 print("*" * 80)
+
+                elif input() == "no":
+                print("Password: ")
+                password=input()
+                save_credentials(create_credentials(account, email, password))
+                print("Credentials saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, ex -exit the contact list ")
+                print("*" * 80)
+                    ###generating and save new password
+                save_user(create_credentials(account, email,password)) 
+                save_credentials(create_credentials(account, email,password))
+                print ('\n')
+                print(f"New User {account} {email} created")
+                print ('\n')
+
+        
+                print("Cant find it please use shortcode 'ca' and start again")
+
+                ###Display account
+        elif short_code=="da":
+            print(f"These are your credentials for {name}:")
+            print("*" * 30)
+            for Credentials in display_credentials():
+                    print(f"{Credentials.account}\n {Credentials.email}\n {Credentials.password}")
+            else:
+                    print("*" * 30)
+                    print("If empty, you do not have any accounts saved")
