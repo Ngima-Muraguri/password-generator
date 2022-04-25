@@ -1,5 +1,5 @@
 import unittest #import unittestmodule
-from user import User #import the user class
+from password import User #import the user class
 
 class TestUser(unittest.TestCase):
     def setUp(self):
@@ -53,11 +53,11 @@ class TestUser(unittest.TestCase):
         find a user using username
         '''
         self.new_user.save_user()
-        test_user = User("try", "trickysana")
+        test_user = User("try", "project")
         test_user.save_user()
-        found_user = User.find_user("EsauKip")
+        found_user = User.find_user("MilcahMuraguri")
         self.assertEqual(found_user.username, self.new_user.username)
 
-        
+
 if __name__ == "__main__":
     unittest.main()
