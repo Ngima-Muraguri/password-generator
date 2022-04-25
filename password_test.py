@@ -13,7 +13,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.username,"MilcahMuraguri")
         self.assertEqual(self.new_user.password,"#Youcannotfind5")
 
-        
+
         ##second test
     def test_save_user(self):
         '''
@@ -22,3 +22,16 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         self.assertEqual(len(User.user_list), 1)
+
+    def tearDown(self):
+        '''
+        clean up after each test to prevent errors
+        '''
+        User.user_list = []
+
+        #save many users
+    def test_save_multiple_users(self):
+       self.new_user.save_user()
+       test_user = User("test","project")
+       test_user.save_user()
+       self.assertEqual(len(User.user_list),2)
