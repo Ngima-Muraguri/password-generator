@@ -6,6 +6,13 @@ class User:
     def __init__(self,username,password):
         self.username = username
         self.password =password
+
+        
          ##save users
     def save_user(self):
         User.user_list.append(self)
+
+
+    #delete user
+    def delete_user(self):
+        User.user_list.remove(self)
